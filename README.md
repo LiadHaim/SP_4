@@ -28,3 +28,89 @@ make             # Compiles Demo.cpp into ./demo_bin
 make test        # Builds and runs all tests (creates ./test_bin)
 
 make valgrind    # Runs both demo and tests with Valgrind to detect memory leaks
+🧠 MyContainer Features
+✅ Generic class template (template<typename T = int>)
+
+✅ Dynamic insertion and deletion of elements
+
+✅ Index access with operator[]
+
+✅ Exception handling (out-of-range, element not found)
+
+✅ Multiple iterator types:
+
+Iterator Type	Description
+AscendingOrder	From smallest to largest
+DescendingOrder	From largest to smallest
+SideCrossOrder	Alternates between smallest and largest, then inward
+ReverseOrder	Reverse of insertion order
+Order	In insertion order
+MiddleOutOrder	From middle outward, alternating sides
+
+🔍 Example Demo Output
+text
+Copy
+Edit
+=== Iterator Tests ===
+Ascending : 1 2 6 7 15 
+Descending: 15 7 6 2 1 
+SideCross : 1 15 2 7 6 
+Reverse   : 2 1 6 15 7 
+Order     : 7 15 6 1 2 
+MiddleOut : 6 15 1 7 2 
+✅ Unit Testing (with doctest)
+The test.cpp file includes 11 test cases and 30+ assertions, covering:
+
+Basic operations (size, add, remove, access)
+
+Exception handling
+
+Different element types (int, double, std::string)
+
+All six iterator types
+
+Edge cases: empty containers, single-element containers
+
+Copy constructor & assignment operator
+
+Run with:
+
+bash
+Copy
+Edit
+make test
+🛡️ Memory Leak Detection (Valgrind)
+To validate memory safety and ensure no memory leaks:
+
+bash
+Copy
+Edit
+make valgrind
+Expected output should include:
+
+text
+Copy
+Edit
+All heap blocks were freed -- no leaks are possible
+ERROR SUMMARY: 0 errors from 0 contexts
+🎓 Project Context
+This project was written by a computer science undergraduate student as part of a data structures assignment.
+It was designed to practice:
+
+Templates and generic programming
+
+Custom iterator implementations
+
+Exception-safe memory handling
+
+Unit testing and test-driven development
+
+Use of tools like Valgrind and Make
+
+👤 Author Info
+Name: Liad Haim
+Email: liadi.haim@gmail.com
+University: Ariel University
+Year: 2025
+
+Enjoy exploring the iterators – and don’t forget to run valgrind 😉
